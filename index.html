@@ -7,15 +7,40 @@
     <title>Maxo"s Testpage</title>    
 
     
+<link rel="preconnect" href="//privacy-proxy.usercentrics.eu">
 <link rel="preload" href="//privacy-proxy.usercentrics.eu/latest/uc-block.bundle.js" as="script">
-<script id="usercentrics-cmp" src="https://app.usercentrics.eu/browser-ui/latest/loader.js" data-settings-id="1FkzMKXoQMWOZu" async></script>
+
+    <script type="text/javascript">
+        // create dataLayer
+        window.dataLayer = window.dataLayer || [];
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+
+        // set „denied" as default for both ad and analytics storage, as well as ad_user_data and ad_personalization,
+        gtag("consent", "default", {
+            ad_user_data: "denied",
+            ad_personalization: "denied",
+            ad_storage: "denied",
+            analytics_storage: "denied",
+            wait_for_update: 500 // milliseconds to wait for update
+        });
+
+        // Enable ads data redaction by default [optional]
+        gtag("set", "ads_data_redaction", true);
+        
+        //Enable url pass through
+        gtag('set', 'url_passthrough', true);
+    </script>
+
+<script id="usercentrics-cmp" src="https://web.cmp.usercentrics.eu/ui/loader.js" data-settings-id="1FkzMKXoQMWOZu" async></script>
   <script type="application/javascript" src="https://privacy-proxy.usercentrics.eu/latest/uc-block.bundle.js"></script>  
 <!-- <script>uc.setCustomTranslations('https://temp.staticsave.com/673c5131df63a.json');</script> -->
 
-<script>
- uc.reloadOnOptIn('BJz7qNsdj-7'); // reload page on YouTube opt-in
+<!-- <script>
+ // uc.reloadOnOptIn('BJz7qNsdj-7'); // reload page on YouTube opt-in
  // ... you can also add more service IDs similarly
-</script>
+// </script>
 
     <script>uc.setCustomTranslations({en: {
 
@@ -57,26 +82,7 @@
 <title>Consent Manager Test page</title>
    
 
-  <script type="text/javascript">
-        // create dataLayer
-        window.dataLayer = window.dataLayer || [];
-        function gtag() {
-            dataLayer.push(arguments);
-        }
-
-        // set „denied" as default for both ad and analytics storage, as well as ad_user_data and ad_personalization,
-        gtag("consent", "default", {
-            ad_user_data: "denied",
-            ad_personalization: "denied",
-            ad_storage: "denied",
-            analytics_storage: "denied",
-            functionality_storage: "denied",
-            wait_for_update: 500 // milliseconds to wait for update
-        });
-
-        // Enable ads data redaction by default [optional]
-        gtag("set", "ads_data_redaction", true);
-    </script>
+  
 
     <script type="text/javascript">
         // Google Tag Manager
